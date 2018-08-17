@@ -1,0 +1,30 @@
+<table>
+  <thead>
+    <tr>
+      <th>Player Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let player of players">
+      <td>{{player.name}}</td>
+      <td *ngIf="curGameId == '1'">
+        <button (click)="updatePlayerStatus(player._id, 'playing')" [ngStyle]="{'background-color': player.status.game1.playing}">Playing</button>
+        <button (click)="updatePlayerStatus(player._id, 'notPlaying')" [ngStyle]="{'background-color': player.status.game1.notPlaying}">Not Playing</button>
+        <button (click)="updatePlayerStatus(player._id, 'undecided')" [ngStyle]="{'background-color': player.status.game1.undecided}">Undecided</button>
+      </td>
+
+      <td *ngIf="curGameId == '2'">
+        <button (click)="updatePlayerStatus(player._id, 'playing')" [ngStyle]="{'background-color': player.status.game2.playing}">Playing</button>
+        <button (click)="updatePlayerStatus(player._id, 'notPlaying')" [ngStyle]="{'background-color': player.status.game2.notPlaying}">Not Playing</button>
+        <button (click)="updatePlayerStatus(player._id, 'undecided')" [ngStyle]="{'background-color': player.status.game2.undecided}">Undecided</button>
+      </td>
+
+        <td *ngIf="curGameId == '3'">
+          <button (click)="updatePlayerStatus(player._id, 'playing')" [ngStyle]="{'background-color': player.status.game3.playing}">Playing</button>
+          <button (click)="updatePlayerStatus(player._id, 'notPlaying')" [ngStyle]="{'background-color': player.status.game3.notPlaying}">Not Playing</button>
+          <button (click)="updatePlayerStatus(player._id, 'undecided')" [ngStyle]="{'background-color': player.status.game3.undecided}">Undecided</button>
+        </td>
+    </tr>
+  </tbody>
+</table>

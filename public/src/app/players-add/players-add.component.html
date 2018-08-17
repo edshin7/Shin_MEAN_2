@@ -1,0 +1,9 @@
+<h5> Add Player</h5>
+
+<form (submit)="submitPlayer()">
+  <p>Player name: <input (keyup)="validate()" type="text" name="name" [(ngModel)]="player.name"></p>
+  <p *ngFor="let error of errors" style="color:red">{{error.message}}</p>
+  <p>Preferred Position (optional): <input type="text" name="pref_pos" [(ngModel)]="player.pref_pos"></p>
+  <button *ngIf="hasErrors == false" type="submit">Add Player</button>
+  <button *ngIf="hasErrors == true" type="submit" disabled>Add Player</button>
+</form>
